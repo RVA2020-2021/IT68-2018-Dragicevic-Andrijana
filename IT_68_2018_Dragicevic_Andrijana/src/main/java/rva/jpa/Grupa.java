@@ -33,7 +33,7 @@ public class Grupa implements Serializable {
 
 	//bi-directional many-to-one association to Student
 	@JsonIgnore //sprecava vracanje beskonacne petlje kad se getgrupa pozove iz rest kontrolera jer grupa ima asocijaciju tj referencu na neku drugu tabelu i onda ce uvek vracati besk petlju; samo gde ima OneToMany jer je grupa negde strani kljuc
-	@OneToMany(mappedBy="grupa")
+	@OneToMany(mappedBy="grupa", cascade = {CascadeType.DETACH, CascadeType.REMOVE})
 	private List<Student> students;
 
 	public Grupa() {

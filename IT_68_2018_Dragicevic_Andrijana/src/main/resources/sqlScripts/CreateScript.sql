@@ -9,13 +9,13 @@ DROP SEQUENCE IF EXISTS smer_seq;
 DROP SEQUENCE IF EXISTS student_seq;
 
 CREATE TABLE smer(
-	id integer not null,
+	id integer not null default(nextval('smer_seq')),
 	naziv varchar(100),
 	oznaka varchar(50)
 );
 
 CREATE TABLE projekat(
-	id integer not null,
+	id integer not null default(nextval('projekat_seq')),
 	naziv varchar(100),
 	oznaka varchar(10),
 	opis varchar(500)

@@ -31,7 +31,9 @@ export class StudentComponent implements OnInit, OnDestroy, OnChanges {
               private dialog: MatDialog) { }
 
   ngOnChanges(): void {
+    if(this.selektovanaGrupa.id) {
       this.loadData();
+    }
   }
 
   ngOnDestroy(): void {
@@ -39,7 +41,8 @@ export class StudentComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnInit(): void {
-    this.loadData();  }
+    //this.loadData(); 
+  }
 
   public loadData() {
     this.subscription = this.studentService.getStudentiUGrupi(this.selektovanaGrupa.id) 

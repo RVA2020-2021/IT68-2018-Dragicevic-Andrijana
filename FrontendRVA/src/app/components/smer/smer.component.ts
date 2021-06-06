@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -13,7 +13,7 @@ import { SmerDialogComponent } from '../dialogs/smer-dialog/smer-dialog.componen
   templateUrl: './smer.component.html',
   styleUrls: ['./smer.component.css']
 })
-export class SmerComponent implements OnInit {
+export class SmerComponent implements OnInit, OnDestroy {
 
  constructor(private smerService: SmerService,
               public dialog: MatDialog) { }
